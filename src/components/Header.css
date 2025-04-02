@@ -1,0 +1,482 @@
+/* src/components/Header.css */
+
+
+/* Cores
+Preto #090b16
+azul #1b2749
+cinza #ecff0f4  
+amarelo #f7b75b
+*/
+
+/* src/components/Header.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+/* Cores */
+.Inicio {
+    width: 100%;         /* A largura é 100% da tela */
+    background-color: #1b2749; /* Cor de fundo */
+    border-radius: 1cap;
+    margin-left: auto;
+    margin-right: auto;
+    height: 660px;
+
+  }
+
+
+  .logo-container {
+    position: absolute;
+    top: 50%; /* Alinha a logo verticalmente ao centro */
+    left: 50%; /* Alinha a logo horizontalmente ao centro */
+    transform: translate(-50%, -50%); /* Ajuste para centralizar exato */
+    z-index: 10; /* Garante que a logo fique sobre as colunas */
+  }
+  
+/* Header.css */
+/* Estilo básico para o contêiner */
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Usando altura total da tela */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Logo */
+.logo {
+  position: absolute;
+  width: 100px; /* Tamanho da logo */
+  opacity: 0; /* A logo começa invisível */
+  transform: translateX(-50%) translateY(-30%); /* Ajuste para mover a logo mais para baixo */
+  animation: showLogo 0.5s forwards; /* Animação da logo sem atraso */
+  align-items: center;
+}
+
+/* Imagem da esquerda */
+.img-left {
+  position: absolute;
+  left: 50%; /* Fixa no centro da tela */
+  top: 50%;
+  width: 300px; /* Tamanho da imagem */
+  height: 300px;
+  opacity: 1; /* Imagem já visível */
+  transform: translate(-50%, -50%); /* Centraliza a imagem */
+  animation: none; /* Remove a animação, pois a imagem fica fixa */
+}
+
+/* Imagem da direita */
+.img-right {
+  position: absolute;
+  left: 50%; /* Centraliza horizontalmente em relação à tela */
+  top: 50%; /* Centraliza verticalmente em relação à tela */
+  width: 50px; /* Tamanho inicial bem pequeno */
+  height: 50px; /* Tamanho inicial bem pequeno */
+  opacity: 0; /* Começa invisível */
+  transform: translate(-50%, -50%); /* Centraliza a imagem em relação à imagem da esquerda */
+  animation: growRight 3s forwards; /* Animação para crescer a imagem */
+}
+
+/* Animação da imagem da direita para crescer */
+@keyframes growRight {
+  0% {
+    width: 50px;
+    height: 50px;
+    opacity: 1; /* Começa visível */
+    transform: translate(-50%, -50%) scale(0.2); /* Começa bem pequena e visível */
+  }
+  100% {
+    width: 300px; /* Tamanho final igual ao original */
+    height: 300px; /* Tamanho final igual ao original */
+    opacity: 1; /* Permanecer visível */
+    transform: translate(-50%, -50%) scale(1); /* Fica no tamanho original */
+  }
+}
+
+/* Para telas pequenas (máximo 768px) */
+@media (max-width: 768px) {
+  .logo {
+    width: 75px; /* Tamanho da logo ajustado para tablets */
+    left: 85%; /* Move a logo mais para a direita */
+    top: 10%; /* Adiciona um espaço do topo */
+    opacity: 1; /* A logo já está visível */
+    animation: none; /* Remove a animação da logo */
+  }
+
+  .img-left,
+  .img-right {
+    width: 70px; /* Tamanho das imagens ajustado para tablets */
+    height: 70px; /* Tamanho das imagens ajustado para tablets */
+    left: 40%; /* Move as imagens para a direita */
+    top: 20px;
+    opacity: 1; /* As imagens já estão visíveis */
+    animation: none; /* Remove a animação das imagens */
+  }
+}
+
+/* Para telas médias (notebooks de 769px a 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .logo {
+    width: 75px; /* Tamanho da logo ajustado para tablets */
+    left: 75%; /* Move a logo mais para a esquerda */
+    top: 15%; /* Adiciona um espaço do topo */
+    opacity: 1; /* A logo já está visível */
+    animation: none; /* Remove a animação da logo */
+  }
+
+  .img-left,
+  .img-right {
+    width: 100px; /* Tamanho das imagens ajustado para notebooks */
+    height: 100px; /* Tamanho das imagens ajustado para notebooks */
+    left: 75px; /* Move as imagens mais para a esquerda */
+    top: 10px; /* Ajuste da posição vertical das imagens */
+    opacity: 1; /* As imagens já estão visíveis */
+    animation: none; /* Remove a animação das imagens */
+  }
+}
+
+.Cardes {
+    
+    height: 580px;
+}
+  
+.colunas {
+    position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+  margin-left:15px ;
+  margin-right:15px ;
+
+}
+
+.coluna {
+  position: relative;
+  width: 30%; /* Define a largura de cada coluna */
+  padding: 15px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  cursor: pointer;
+  
+}
+.coluna:hover {
+  transform: scale(1.05); /* Leve aumento de tamanho */
+}
+
+.coluna:focus {
+  outline: none;
+  
+}
+
+
+.coluna h2 {
+    text-align: center;
+}
+
+.svg-icon {
+  display: none;
+}
+
+
+  .Inicio h1 {
+
+    color: #e4d7d7;
+    text-align: center; 
+    padding-top: 3%;
+  }
+
+  .Inicio p {
+    font-size: large;
+    text-align: center; 
+    padding-top: 0%;
+  }
+
+
+
+  .card-container {
+
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .card {
+
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 30px;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    margin-top: 100px; /* Adiciona espaço acima do card */
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .card h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .card p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .card button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .card button:hover {
+    background-color: #0056b3;
+  }
+  
+
+  /* src/components/Footer.css */
+
+.footer {
+    background-color: #222;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .footer-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .footer-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .footer-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .footer-bottom {
+    margin-top: 40px;
+    font-size: 14px;
+    color: #aaa;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+  }
+  
+  /* Estilos para o botão de coluna */
+  /* Estilo geral para todas as seções */
+.social-media, .criacao-de-sites, .identidade-visual, .registros-de-marca, .producoes-audiovisuais {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+/* Estilo específico para cada seção */
+.social-media {
+  background-color: #f8f9fa;
+}
+
+.criacao-de-sites {
+  background-color: #e9ecef;
+}
+
+.identidade-visual {
+  background-color: #f1f3f5;
+}
+
+.registros-de-marca {
+  background-color: #dfe4ea;
+}
+
+.producoes-audiovisuais {
+  background-color: #ced4da;
+}
+
+/* Títulos de cada seção */
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Estilo de parágrafo */
+p {
+  font-size: 16px;
+  color: #555;
+}
+
+
+/* Para telas menores que 768px (celulares em modo paisagem ou dispositivos ainda menores) */
+/* src/components/Header.css */
+
+/* Restante do código do CSS... */
+
+/* Para telas menores que 1200px */
+@media (max-width: 1200px) {
+  .Inicio{
+    height: 650px;
+
+  }
+  .colunas {
+      flex-wrap: wrap;  /* Permite que as colunas se reorganizem */
+      justify-content: center;  /* Alinha as colunas ao centro */
+  }
+
+  .coluna {
+      width: 45%; /* As colunas ocuparão 45% da largura da tela */
+      margin: 10px 0; /* Dá espaçamento entre as colunas */
+      text-align: center; /* Centraliza o conteúdo dentro das colunas */
+  }
+
+
+  .coluna i {
+      display: block; /* Mostra o ícone */
+      font-size: 40px; /* Ajuste o tamanho do ícone, se necessário */
+      margin-bottom: 10px; /* Espaçamento entre o ícone e o conteúdo */
+  }
+
+  .logo-container {
+    top: 25px;   /* Ajuste da distância do topo para dispositivos ainda menores */
+    left: 35px;  /* Ajuste da distância da esquerda */
+}
+}
+
+/* Para telas menores que 768px */
+@media (max-width: 768px) {
+  .Inicio{
+    height: 650px;
+
+  }
+  .colunas {
+      flex-wrap: wrap;
+      justify-content: space-between;  /* Ajusta as colunas para serem bem distribuídas */
+  }
+
+  .coluna {
+      width: 35%; /* Ajusta para que as colunas ocupem 48% da largura da tela */
+      margin: 10px 0;
+      text-align: center;
+  }
+  .coluna p{
+    display: none;
+  }
+  /* Oculta o título e exibe apenas o ícone */
+  .coluna h2 {
+      font-size: 1rem;
+  }
+
+  .coluna i {
+      display: block;
+      font-size: 40px;
+      margin-bottom: 10px;
+  }
+}
+
+/* Para telas menores que 480px */
+@media (max-width: 480px) {
+
+  .Inicio{
+    height: 650px;
+
+  }
+  .colunas {
+      flex-wrap: wrap;
+      justify-content: center;  /* Alinha ao centro */
+  }
+
+  .coluna {
+
+      margin: 10px 0;
+      text-align: center;
+  }
+  .coluna i {
+      display: block;
+      font-size: 35px; /* Ajuste o tamanho do ícone */
+      margin-bottom: 10px;
+  }
+
+  .card {
+
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 30px;
+    width: 50%;
+   
+
+  }
+}
+
+@media (max-width: 768px) {
+  .svg-icon {
+      display: inline-block;
+  }
+
+  /* Ajustes no tamanho e margem do ícone */
+  .coluna {
+      text-align: center; /* Alinhar o conteúdo ao centro */
+  }
+
+  .svg-icon {
+      width: 40px; /* Ajuste do tamanho do ícone */
+      height: 40px;
+      margin-bottom: 10px; /* Espaçamento entre o ícone e o texto */
+  }
+}
+
+
+
+.formulario-orcamento {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.formulario-orcamento h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.formulario-orcamento form {
+    max-width: 600px;
+    margin: 0 auto;
+}
